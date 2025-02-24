@@ -1,3 +1,15 @@
+@font-face {
+  font-family: "MyFont"; /* Nom que tu utiliseras pour la police */
+  src: url("/fonts/Syne-ExtraBold.ttf"); /* Police woff */
+  font-weight: 800;
+  font-style: normal;
+}
+
+/* Appliquer la police sur tout le site ou sur un élément spécifique */
+body {
+  font-family: "MyFont";
+}
+
 * {
   margin: 0;
   padding: 0;
