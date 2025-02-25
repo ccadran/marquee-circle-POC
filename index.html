@@ -7,20 +7,16 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <div
-      class="container"
-      style="position: relative; width: 100%; height: 100vh; overflow: hidden"
-    >
-      <h1>VOTRE RÉVEILLE</h1>
-      <!-- Canvas pour le texte arrière (z-index bas) -->
+    <!-- <h1>VOTRE RÉVEILLE</h1> -->
+    <div class="container">
       <canvas class="webgl1"></canvas>
 
-      <!-- Image HTML au milieu -->
-      <img src="/test.jpg" />
+      <!-- <img src="/test.jpg" /> -->
 
-      <!-- Canvas pour le texte avant (z-index élevé) -->
       <canvas class="webgl2"></canvas>
     </div>
-    <script type="module" src="src/main.ts"></script>
+
+    <!-- <script type="module" src="src/main.ts"></script> -->
+    <script type="module" src="src/testBlend.ts"></script>
   </body>
 </html>
