@@ -91,7 +91,7 @@ const ttfLoader = new TTFLoader();
 ttfLoader.load("/fonts/Syne-ExtraBold.ttf", (fontData) => {
   const font = fontLoader.parse(fontData);
   const geometry = new TextGeometry(
-    "LE ZINE QUI RÉVEILLE VOTRE ÂME DE PIRATE",
+    "LE ZINE QUI RÉVEILLE VOTRE ÂME DE PIRATE ",
     {
       font,
       size: 0.3,
@@ -101,8 +101,13 @@ ttfLoader.load("/fonts/Syne-ExtraBold.ttf", (fontData) => {
 
   geometry.computeBoundingBox();
   if (!geometry.boundingBox) return;
-  const textWidth =
-    geometry.boundingBox.max.x - geometry.boundingBox.min.x + 0.5;
+  const targetWidth = 16;
+  let textWidth = geometry.boundingBox.max.x - geometry.boundingBox.min.x + 0.5;
+  const scale = targetWidth / textWidth;
+  geometry.scale(scale, scale, scale);
+
+  textWidth *= scale;
+
   const radius = textWidth / (2 * Math.PI);
 
   [material1, material2] = createTextMaterials(radius);
