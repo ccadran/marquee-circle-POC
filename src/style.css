@@ -18,8 +18,9 @@ body {
 
 .container {
   width: 50vw;
-  height: 50vh;
+  height: 100vh;
   position: relative;
+  border: 1px solid black;
   /* display: none; */
 }
 @media screen and (max-width: 768px) {

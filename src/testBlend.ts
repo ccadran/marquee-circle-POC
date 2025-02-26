@@ -65,7 +65,6 @@ const createTextMaterial = (radius: number): THREE.ShaderMaterial => {
       varying vec3 vPosition;
       void main() {
           gl_FragColor = vec4(0.585, 0.148, 0.672, 1.0);
-          
       }
     `,
     uniforms: {
@@ -85,8 +84,6 @@ textureLoader.load("/test.jpg", (texture) => {
   const planeGeometry = new THREE.PlaneGeometry(2, 2);
   const planeMaterial = new THREE.MeshBasicMaterial({
     map: texture,
-
-    // transparent: true,
   });
   const plane = new THREE.Mesh(planeGeometry, planeMaterial);
   plane.position.set(0, 0, 0);
