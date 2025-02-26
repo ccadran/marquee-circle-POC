@@ -1,5 +1,4 @@
 import * as THREE from "three";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 import {
   MSDFTextGeometry,
   MSDFTextMaterial,
@@ -11,13 +10,12 @@ import fragmentShader from "./shaders/fragment.glsl";
 import fnt from "./fonts/Syne-ExtraBold-msdf.json";
 import atlasURL from "./fonts/Syne-ExtraBold.png";
 
-// Configuration
 const config = {
   textScaleMultiplier: window.innerWidth < 440 ? 0.035 : 0.025,
   imgScaleMultiplier: 0.003,
 };
 
-// Initialisation de la scène, caméra et rendu
+//INIT SCENE/ CAMERA/ RENDERER
 const initScene = (container) => {
   const canvas = document.querySelector("canvas.webgl1");
   const sizes = {
@@ -42,20 +40,14 @@ const initScene = (container) => {
   renderer.setSize(sizes.width, sizes.height);
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
 
-  const controls = new OrbitControls(camera, canvas);
-  controls.enableDamping = true;
-  controls.dampingFactor = 0.05;
-  controls.screenSpacePanning = false;
-  controls.maxPolarAngle = Math.PI;
-
-  return { scene, camera, renderer, sizes, controls };
+  return { scene, camera, renderer, sizes };
 };
 
-// Chargement de la texture
-const loadTexture = (url, scene, sizes) => {
+//LOAD PLANE TEXTURE
+const loadTexture = (src, scene, sizes) => {
   const textureLoader = new THREE.TextureLoader();
   return new Promise((resolve) => {
-    textureLoader.load(url, (texture) => {
+    textureLoader.load(src, (texture) => {
       texture.colorSpace = THREE.SRGBColorSpace;
       const planeGeometry = new THREE.PlaneGeometry(2, 2);
       const planeMaterial = new THREE.MeshBasicMaterial({ map: texture });
@@ -68,31 +60,36 @@ const loadTexture = (url, scene, sizes) => {
   });
 };
 
-// Chargement de l'atlas de police
+//LOAD FONT ATLAS
 const loadFontAtlas = (path) => {
   return new Promise((resolve) => {
     const loader = new THREE.TextureLoader();
     loader.load(path, resolve);
   });
 };
+
+//CALCULATE SCALE
 const calculateScale = (textMesh, sizes) => {
-  textMesh.geometry.computeBoundingBox(); // Assurez-vous que la boundingBox est calculée
+  textMesh.geometry.computeBoundingBox();
+
   const textWidth =
     textMesh.geometry.boundingBox.max.x -
     textMesh.geometry.boundingBox.min.x +
-    0.5;
+    20.5;
+  console.log(textMesh.geometry.boundingBox.max.x);
+
   const targetWidth = sizes.width * config.textScaleMultiplier;
 
   return {
-    scale: targetWidth / textWidth, // Échelle calculée
-    textWidth: textWidth, // Largeur du texte
+    scale: targetWidth / textWidth,
+    textWidth: textWidth,
   };
 };
 
-// Création du texte MSDF
-const createTextMesh = (font, atlas, sizes) => {
+// MSDF TEXT MESH
+const createTextMesh = (font, atlas, sizes, textContent) => {
   const geometry = new MSDFTextGeometry({
-    text: "LE ZINE QUI RÉVEILLE VOTRE ÂME DE PIRATE LE ZINE QUI RÉVEILLE VOTRE ÂME DE PIRATE",
+    text: textContent,
     font: font,
   });
 
@@ -119,7 +116,6 @@ const createTextMesh = (font, atlas, sizes) => {
   const textMesh = new THREE.Mesh(geometry, textMaterial);
 
   const { scale, textWidth } = calculateScale(textMesh, sizes);
-  console.log(scale, textWidth);
 
   textMesh.scale.set(scale, -scale, scale);
 
@@ -132,18 +128,18 @@ const createTextMesh = (font, atlas, sizes) => {
   return { textMesh, textMaterial };
 };
 
-// Mise à jour de l'échelle du texte
+//UPDATE SCALE OF TEXT AND PLANE
 const updateTextScale = (textMesh, plane, sizes) => {
   if (!textMesh || !plane) return;
 
   const planeScale = sizes.width * config.imgScaleMultiplier;
-  const { scale, textWidth } = calculateScale(textMesh, sizes);
+  const { scale } = calculateScale(textMesh, sizes);
 
   textMesh.scale.set(scale, -scale, scale);
   plane.scale.set(planeScale, planeScale, planeScale);
 };
 
-// Animation
+// TICK ANIM
 const startAnimation = (renderer, scene, camera, textMaterial) => {
   const clock = new THREE.Clock();
   const tick = () => {
@@ -157,7 +153,7 @@ const startAnimation = (renderer, scene, camera, textMaterial) => {
   tick();
 };
 
-// Gestion du redimensionnement
+//RESIZE LISTENER
 const setupResizeListener = (
   camera,
   renderer,
@@ -181,20 +177,30 @@ const setupResizeListener = (
   window.addEventListener("resize", onWindowResize);
 };
 
-// Initialisation de l'application
-const initApp = async () => {
+//INIT ANIM
+const initMarquee = async () => {
   const container = document.querySelector(".container");
-  const { scene, camera, renderer, sizes, controls } = initScene(container);
+  const { scene, camera, renderer, sizes } = initScene(container);
 
-  const plane = await loadTexture("/test.jpg", scene, sizes);
+  const imgElement = document.querySelector("img");
+  const imageSrc = imgElement.src;
+
+  const plane = await loadTexture(imageSrc, scene, sizes);
   const atlas = await loadFontAtlas(atlasURL);
 
-  const { textMesh, textMaterial } = createTextMesh(fnt, atlas, sizes);
+  const textElement = document.querySelector(".text");
+  const textContent = textElement.textContent.toUpperCase();
+
+  const { textMesh, textMaterial } = createTextMesh(
+    fnt,
+    atlas,
+    sizes,
+    textContent
+  );
   scene.add(textMesh);
 
   startAnimation(renderer, scene, camera, textMaterial);
   setupResizeListener(camera, renderer, sizes, textMesh, plane, container);
 };
 
-// Lancement de l'application
-initApp();
+initMarquee();
