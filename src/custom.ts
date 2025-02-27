@@ -228,7 +228,7 @@ export class MarqueeCircle extends HTMLElement {
     this.plane = await this.loadTexture(this.src);
 
     const atlas = await this.loadFontAtlas(
-      "https://climax-script.netlify.app/assets/Syne-ExtraBold-C3lr4grg.png"
+      "https://cdn.prod.website-files.com/67aa1b4ceb413205a7d119d7/67c07915e37a7fa6ce755c96_Syne-ExtraBold.png"
     );
 
     const { textMesh, textMaterial } = this.createTextMesh(
