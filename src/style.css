@@ -1,13 +1,5 @@
-@font-face {
-  font-family: "MyFont"; /* Nom que tu utiliseras pour la police */
-  src: url("/fonts/Syne-ExtraBold.ttf"); /* Police woff */
-  font-weight: 800;
-  font-style: normal;
-}
-
 /* Appliquer la police sur tout le site ou sur un élément spécifique */
 body {
-  font-family: "MyFont";
 }
 
 * {
@@ -15,7 +7,13 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
-
+marquee-circle {
+  height: 100vh;
+  width: 50vw;
+  display: block;
+  position: absolute;
+  top: 0;
+}
 .container {
   width: 50vw;
   height: 100vh;
@@ -24,19 +22,19 @@ body {
   /* display: none; */
 }
 @media screen and (max-width: 768px) {
-  .container {
+  marquee-circle {
     width: 100vw;
     height: 100vh;
   }
 }
-.webgl1 {
+/* .webgl1 {
   position: absolute;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
   z-index: 3;
-}
+} */
 img {
   width: 30vw;
   height: 100%;

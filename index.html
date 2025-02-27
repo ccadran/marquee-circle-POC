@@ -7,18 +7,21 @@
     <link rel="stylesheet" href="/src/style.css" />
   </head>
   <body>
-    <!-- <h1>VOTRE RÉVEILLE</h1> -->
     <div class="container">
       <canvas class="webgl1"></canvas>
 
       <img src="/yo.jpg" />
 
       <canvas class="webgl2"></canvas>
-      <h1 class="text">
-        Le titre du new magazineeee Le titre du new magazineeee
-      </h1>
+      <h1 class="text"></h1>
+      <marquee-circle
+        img-src="/yo.jpg"
+        textContent="Le titre du new magazineeee"
+      >
+      </marquee-circle>
     </div>
 
-    <script type="module" src="src/main.ts"></script>
+    <!-- <script type="module" src="src/main.ts"></script> -->
+    <script type="module" src="/index.ts"></script>
   </body>
 </html>
