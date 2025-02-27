@@ -3,7 +3,7 @@ import { MSDFTextGeometry, uniforms } from "three-msdf-text-utils";
 import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
 import fnt from "./fonts/Syne-ExtraBold-msdf.json";
-import atlasURL from "https://climax-script.netlify.app/assets/Syne-ExtraBold-C3lr4grg.png";
+import atlasURL from "./fonts/Syne-ExtraBold.png";
 import img from "/yo.jpg";
 
 console.log("___atlas", atlasURL);
@@ -227,7 +227,9 @@ export class MarqueeCircle extends HTMLElement {
 
     this.plane = await this.loadTexture(this.src);
 
-    const atlas = await this.loadFontAtlas(atlasURL);
+    const atlas = await this.loadFontAtlas(
+      "https://climax-script.netlify.app/assets/Syne-ExtraBold-C3lr4grg.png"
+    );
 
     const { textMesh, textMaterial } = this.createTextMesh(
       fnt,
