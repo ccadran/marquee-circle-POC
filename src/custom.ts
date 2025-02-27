@@ -4,6 +4,7 @@ import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
 import fnt from "./fonts/Syne-ExtraBold-msdf.json";
 import atlasURL from "./fonts/Syne-ExtraBold.png";
+import img from "/yo.jpg";
 
 export class MarqueeCircle extends HTMLElement {
   src = "";
@@ -23,7 +24,7 @@ export class MarqueeCircle extends HTMLElement {
   private sizes = { width: 0, height: 0 };
 
   connectedCallback() {
-    this.src = this.getAttribute("img-src") || "./yo.jpg";
+    this.src = this.getAttribute("img-src") || img;
     this.textContent =
       this.getAttribute("textContent")?.toUpperCase() || "DEFAULT TEXT";
 
