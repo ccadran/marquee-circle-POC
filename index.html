@@ -1,27 +1,1537 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--  This site was created in Webflow. https://webflow.com  --><!--  Last Published: Thu Feb 27 2025 13:31:22 GMT+0000 (Coordinated Universal Time)  -->
+<html
+  data-wf-page="67ab2897c8b464fb9682a564"
+  data-wf-site="67aa1b4ceb413205a7d119d7"
+>
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Three.js Scene</title>
-    <link rel="stylesheet" href="/src/style.css" />
+    <meta charset="utf-8" />
+    <title>Climax | Le média plus chaud que le climat</title>
+    <meta
+      content="Climax raconte la révolution climatique avec humour et impertinence dans un fanzine et une newsletter."
+      name="description"
+    />
+    <meta
+      content="Climax | Le média plus chaud que le climat"
+      property="og:title"
+    />
+    <meta
+      content="Climax raconte la révolution climatique avec humour et impertinence dans un fanzine et une newsletter."
+      property="og:description"
+    />
+    <meta
+      content="https://cdn.prod.website-files.com/67aa1b4ceb413205a7d119d7/67bc40cdbec9c9f7902516e2_rs.png"
+      property="og:image"
+    />
+    <meta
+      content="Climax | Le média plus chaud que le climat"
+      property="twitter:title"
+    />
+    <meta
+      content="Climax raconte la révolution climatique avec humour et impertinence dans un fanzine et une newsletter."
+      property="twitter:description"
+    />
+    <meta
+      content="https://cdn.prod.website-files.com/67aa1b4ceb413205a7d119d7/67bc40cdbec9c9f7902516e2_rs.png"
+      property="twitter:image"
+    />
+    <meta property="og:type" content="website" />
+    <meta content="summary_large_image" name="twitter:card" />
+    <meta content="width=device-width, initial-scale=1" name="viewport" />
+    <meta content="Webflow" name="generator" />
+    <link href="css/normalize.css" rel="stylesheet" type="text/css" />
+    <link href="css/webflow.css" rel="stylesheet" type="text/css" />
+    <link href="css/climax-zine.webflow.css" rel="stylesheet" type="text/css" />
+    <script type="text/javascript">
+      !(function (o, c) {
+        var n = c.documentElement,
+          t = " w-mod-";
+        (n.className += t + "js"),
+          ("ontouchstart" in o ||
+            (o.DocumentTouch && c instanceof DocumentTouch)) &&
+            (n.className += t + "touch");
+      })(window, document);
+    </script>
+    <link href="images/favicon.jpg" rel="shortcut icon" type="image/x-icon" />
+    <link href="images/webclip.jpg" rel="apple-touch-icon" />
+    <link
+      href="https://cdn.smootify.io/assets/latest/css/index.css"
+      rel="stylesheet"
+    />
+    <script>
+      window.SmootifyUserOptions = {
+        productsBase: "product",
+        collectionsBase: "collection",
+        vendorsBase: "vendor",
+        accountBase: "account",
+        orderPageUrl: "/account/order",
+      };
+    </script>
+    <script
+      type="module"
+      src="https://cdn.smootify.io/assets/latest/js/index.js"
+      async=""
+      defer=""
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <style>
+      .mini-cart_dropdown-list {
+        mix-blend-mode: normal !important;
+      }
+      .typo-corps-de-texte.w-richtext p {
+        margin-bottom: 12px;
+      }
+      .custom-button {
+        position: relative;
+        padding: 10px 20px;
+        font-size: 16px;
+        color: #304de5;
+        background: white;
+        border: 2px dashed transparent; /* On utilise une bordure transparente */
+        cursor: pointer;
+        isolation: isolate;
+      }
+      .custom-button::before {
+        content: "";
+        position: absolute;
+        top: -2px;
+        left: -2px;
+        width: calc(100% + 4px);
+        height: calc(100% + 4px);
+        border: 2px dashed #304de5; /* Bordure en pointillés */
+        border-radius: inherit;
+        animation: rotateStroke 2s linear infinite;
+      }
+      @keyframes rotateStroke {
+        from {
+          transform: rotate(0deg);
+        }
+        to {
+          transform: rotate(360deg);
+        }
+      }
+      body,
+      html {
+        overscroll-behavior: none;
+        overflow-x: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+      }
+      html {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        -webkit-text-size-adjust: 100%;
+        text-rendering: geometricPrecision;
+      }
+    </style>
+    <link rel="preconnect" href="https://uploads-ssl.webflow.com" />
+    <link rel="preconnect" href="https://www.gstatic.com" />
+    <link rel="stylesheet" href="./src/style.css" />
+    <!--  Boutton de formulaire personnaliser  -->
+    <script>
+      // Wait for the DOM to be fully loaded
+      document.addEventListener("DOMContentLoaded", function () {
+        // Find all elements with the ms-code-submit-new attribute
+        const newSubmitButtons = document.querySelectorAll(
+          "[ms-code-submit-new]"
+        );
+        // Add click event listeners to each new submit button
+        newSubmitButtons.forEach((button) => {
+          button.addEventListener("click", function (e) {
+            e.preventDefault(); // Prevent default action if it's a link
+            // Get the value of the ms-code-submit-new attribute
+            const submitId = this.getAttribute("ms-code-submit-new");
+            // Find the corresponding old submit button
+            const oldSubmitButton = document.querySelector(
+              `[ms-code-submit-old="${submitId}"]`
+            );
+            // If found, trigger a click on the old submit button
+            if (oldSubmitButton) {
+              oldSubmitButton.click();
+            } else {
+              console.error(
+                `No matching old submit button found for ID: ${submitId}`
+              );
+            }
+          });
+        });
+      });
+    </script>
+    <style>
+      [ms-code-submit-old] {
+        display: none; /* Masque les boutons "anciens" */
+      }
+    </style>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sélectionner le bouton "cta-empty" avec l'attribut data-action="close-cart"
+        const ctaEmptyButton = document.querySelector("#cta-empty");
+        const dialog = document.querySelector("dialog"); // Sélectionner le dialog que tu veux fermer
+        // Ajouter un événement de clic au bouton "cta-empty"
+        ctaEmptyButton.addEventListener("click", function (e) {
+          e.preventDefault(); // Empêcher le comportement par défaut (comme le lien)
+          // Si l'attribut data-action="close-cart" est présent, fermer la modal
+          if (
+            ctaEmptyButton.getAttribute("data-action") === "close-cart" &&
+            dialog
+          ) {
+            dialog.close(); // Fermer la modal ou le dialog
+          }
+          // Attendre que la modal soit fermée avant de faire défiler la page
+          setTimeout(function () {
+            // Rediriger vers la section "packs"
+            window.location.hash = "#packs"; // Défilement vers la section "packs"
+          }, 100); // Attente de 100ms avant de faire défiler la page
+        });
+      });
+    </script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sélectionne les éléments avec "color-cms"
+        const colorCmsElements = document.querySelectorAll(".color-cms");
+        // Sélectionne les éléments avec "inverse-color-cms"
+        const inverseColorCmsElements =
+          document.querySelectorAll(".inverse-color-cms");
+        // Sélectionne les éléments avec "Shop-cta" + "color-cms"
+        const shopCtaElements = document.querySelectorAll(
+          ".shop-cta.color-cms"
+        );
+        // Sélectionne les éléments avec "transparent-bg" + "color-cms"
+        const transparentBgElements = document.querySelectorAll(
+          ".transparent-bg.color-cms"
+        );
+        // Sélectionne les éléments avec "link-corp"
+        const linkCorpElements = document.querySelectorAll(".link-corp");
+        // Sélectionne l'élément "wrapper-footer"
+        const wrapperFooter = document.querySelector(".wrapper-footer");
+        // Vérifie si "wrapper-footer" existe
+        if (wrapperFooter) {
+          // Récupère les couleurs de "wrapper-footer"
+          const backgroundColor =
+            window.getComputedStyle(wrapperFooter).backgroundColor;
+          const textColor = window.getComputedStyle(wrapperFooter).color;
+          // Vérification dans la console
+          console.log("Couleur de fond récupérée:", backgroundColor);
+          console.log("Couleur du texte récupérée:", textColor);
+          // Appliquer les couleurs alternées aux éléments "color-cms", sauf pour Shop-cta
+          colorCmsElements.forEach((element, index) => {
+            // Ne pas affecter les éléments Shop-cta ici
+            if (!element.classList.contains("shop-cta")) {
+              if (index % 2 === 0) {
+                element.style.backgroundColor = backgroundColor;
+                element.style.color = textColor;
+              } else {
+                element.style.backgroundColor = textColor;
+                element.style.color = backgroundColor;
+              }
+            }
+          });
+          // Appliquer les couleurs inversées aux éléments "inverse-color-cms"
+          inverseColorCmsElements.forEach((element) => {
+            element.style.backgroundColor = textColor;
+            element.style.color = backgroundColor;
+          });
+          // Appliquer la couleur de fond de wrapper-footer pour les éléments "Shop-cta.color-cms"
+          shopCtaElements.forEach((element) => {
+            // La couleur du texte devient la couleur de fond de wrapper-footer
+            element.style.color = backgroundColor; // Appliquer la couleur de fond de wrapper-footer comme couleur de texte
+            element.style.backgroundColor = "transparent"; // Garder le fond transparent pour Shop-cta
+          });
+          // Appliquer la logique de couleur inversée sur le texte pour ".transparent-bg.color-cms"
+          transparentBgElements.forEach((element) => {
+            const parentBgColor = window.getComputedStyle(
+              element.parentElement
+            ).backgroundColor;
+            // Vérifier si le fond de l'élément parent est similaire à la couleur du wrapper-footer
+            if (parentBgColor === backgroundColor) {
+              element.style.color = textColor; // La couleur du texte devient la couleur du texte du wrapper-footer
+            } else {
+              element.style.color = backgroundColor; // Sinon, la couleur du texte devient la couleur de fond du wrapper-footer
+            }
+            // Le fond de l'élément .transparent-bg doit rester transparent
+            element.style.backgroundColor = "transparent";
+          });
+          // Appliquer la couleur de texte de wrapper-footer pour les éléments "link-corp"
+          linkCorpElements.forEach((element) => {
+            element.style.color = textColor; // Appliquer la couleur de texte de wrapper-footer à link-corp
+          });
+        } else {
+          console.log("L'élément 'wrapper-footer' est introuvable.");
+        }
+      });
+    </script>
   </head>
-  <body>
-    <div class="container">
-      <canvas class="webgl1"></canvas>
-
-      <img src="/yo.jpg" />
-
-      <canvas class="webgl2"></canvas>
-      <h1 class="text"></h1>
-      <marquee-circle
-        img-src="/yo.jpg"
-        textContent="Le titre du new magazineeee"
+  <body class="body">
+    <div class="navbar">
+      <a
+        href="index.html"
+        aria-current="page"
+        class="nav-home w-inline-block w--current"
       >
-      </marquee-circle>
+        <div class="code-embed w-embed">
+          <svg
+            preserveaspectratio="xMidYMid meet"
+            data-bbox="-42.657 380.936 680.314 79.129"
+            viewbox="-42.657 380.936 680.314 79.129"
+            height="15"
+            width="auto"
+            xmlns="http://www.w3.org/2000/svg"
+            data-type="color"
+            role="presentation"
+            aria-hidden="true"
+          >
+            <g>
+              <path
+                d="M83.013 419.125c-1.153 18.617-20.328 27.97-60.151 27.97-40.595 0-65.519-6.908-65.519-32.593s24.924-33.566 65.519-33.566c39.902 0 59.13 10.37 60.216 29.05H55.779c-2.674-6.212-10.069-10.565-32.917-10.565-26.923 0-38.071 4.183-38.071 15.08 0 10.021 11.148 14.108 38.071 14.108 22.803 0 30.155-4.273 32.862-9.485h27.289v.001z"
+                fill="currentColor"
+                data-color="1"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M184.375 426.702v18.485h-77.193v-.039h-10.39V382.88h26.292v43.822h61.291z"
+                data-color="1"
+              ></path>
+              <path
+                fill="currentColor"
+                d="M223.832 382.88v62.267H197.54V382.88h26.292z"
+                data-color="1"
+              ></path>
+              <path
+                fill="currentColor"
+                d="m365.28 382.88-49.508 47.28-49.349-47.28h-26.291v62.267h26.291v-31.823l49.429 46.741 49.428-46.858v31.94h26.292V382.88H365.28z"
+                data-color="1"
+              ></path>
+              <path
+                d="m474.094 421.092-14.293-20.397-14.177 20.397h28.47zm10.227 14.594h-48.842l-6.576 9.462h-28.921l45.117-62.268h29.236l45.538 62.268h-28.921l-6.631-9.462z"
+                fill="currentColor"
+                data-color="1"
+              ></path>
+              <path
+                fill="currentColor"
+                d="m602.952 382.88-22.085 17.981-22.085-17.981h-33.653l39.461 30.882-40.513 31.385h33.654l23.078-18.539 23.195 18.539h33.653l-40.589-31.42 39.538-30.847h-33.654z"
+                data-color="1"
+              ></path>
+            </g>
+          </svg>
+        </div> </a
+      ><smootify-cart data-open="on-add"
+        ><button data-action="open-cart" class="mini-cart-modal_button">
+          <div class="w-embed">
+            <div
+              class="dash-button no-bg"
+              style="background-color: transparent !important"
+            >
+              <svg width="100%" height="auto">
+                <rect
+                  width="100%"
+                  height="100%"
+                  stroke="currentColor"
+                  stroke-width="3"
+                  fill="transparent"
+                  stroke-dasharray="10,5"
+                  stroke-dashoffset="0"
+                ></rect>
+              </svg>
+              <span style="display: flex; align-items: center; gap: 2px">
+                <p class="typo-legend">Panier (</p>
+                <p class="cart_count" cart="count">0</p>
+                <p class="typo-legend">)</p>
+              </span>
+            </div>
+            <style>
+              .dash-button.no-bg {
+                background: none !important; /* Supprime toute couleur de fond */
+                border: none;
+                cursor: pointer;
+                padding: 10px 20px;
+                color: currentColor;
+                text-transform: uppercase;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                overflow: hidden;
+                z-index: 1;
+              }
+              /* Supprime un éventuel fond ajouté via un pseudo-élément */
+              .dash-button.no-bg::before {
+                content: none !important; /* Désactive tout pseudo-élément */
+                background: none !important;
+              }
+            </style>
+          </div>
+        </button>
+        <dialog class="mini-cart-modal_dialog">
+          <div class="mini-cart-modal_dialog-container">
+            <div class="mini-cart-modal_dialog-title">
+              <button
+                data-action="close-cart"
+                class="mini-cart-modal_close-button"
+              >
+                <div class="typo-legend">Fermer</div>
+              </button>
+            </div>
+            <div class="mini-cart-modal_form-container w-form">
+              <form
+                id="email-form-2"
+                name="email-form-2"
+                data-name="Email Form 2"
+                method="get"
+                class="mini-cart-modal_form"
+                data-wf-page-id="67ab2897c8b464fb9682a564"
+                data-wf-element-id="3321a376-b1b4-7ffd-0804-6b370991a677"
+              >
+                <div class="mini-cart-modal_cart-items">
+                  <cart-item class="cart-item">
+                    <div class="mini-cart-modal_cart-item">
+                      <div product="url" class="mini-cart-modal_item-image">
+                        <img
+                          cart-item="image"
+                          class="mini-cart-modal_item-img"
+                          src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                          alt=""
+                          max-height="300"
+                          loading="lazy"
+                          max-width="300"
+                        />
+                      </div>
+                      <div class="mini-cart-modal_item-data">
+                        <div cart-item="title" class="typo-legend">
+                          Cart Item Title
+                        </div>
+                        <div
+                          class="mini-cart-modal_options-container space-between"
+                        >
+                          <div class="mini-cart-modal_options-container">
+                            <div cart-item="total" class="typo-corps-de-texte">
+                              4.5€
+                            </div>
+                          </div>
+                        </div>
+                        <div
+                          cart-item="options"
+                          class="mini-cart-modal_options-container"
+                        >
+                          <div option="name" class="typo-corps-de-texte">
+                            Name
+                          </div>
+                          <div class="typo-corps-de-texte">:</div>
+                          <div option="value" class="typo-corps-de-texte">
+                            value
+                          </div>
+                        </div>
+                        <quantity-input class="quantity-input">
+                          <div class="code-embed-2 w-embed">
+                            <div
+                              class="dash-button"
+                              style="width: 140px; height: 42px"
+                            >
+                              <svg width="100%" height="100%">
+                                <rect
+                                  width="140px"
+                                  height="42px"
+                                  stroke="currentColor"
+                                  stroke-width="3"
+                                  fill="transparent"
+                                  stroke-dasharray="10,5"
+                                  stroke-dashoffset="0"
+                                ></rect>
+                              </svg>
+                            </div>
+                          </div>
+                          <div class="mini-cart-modal_quantity-input">
+                            <button
+                              data-action="minus"
+                              class="mini-cart-modal_quantity-button"
+                            >
+                              <svg
+                                viewbox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="mini-cart-modal_close-icon"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M3.75 12C3.75 11.5858 4.08579 11.25 4.5 11.25L19.5 11.25C19.9142 11.25 20.25 11.5858 20.25 12C20.25 12.4142 19.9142 12.75 19.5 12.75L4.5 12.75C4.08579 12.75 3.75 12.4142 3.75 12Z"
+                                  fill="currentColor"
+                                ></path>
+                              </svg></button
+                            ><input
+                              class="typo-corps-de-texte cart-counter w-input"
+                              maxlength="256"
+                              name="field-4"
+                              data-name="Field 4"
+                              placeholder="1"
+                              type="number"
+                              id="field-4"
+                              required=""
+                            /><button
+                              data-action="plus"
+                              class="mini-cart-modal_quantity-button"
+                            >
+                              <svg
+                                viewbox="0 0 24 24"
+                                fill="none"
+                                xmlns="http://www.w3.org/2000/svg"
+                                class="mini-cart-modal_close-icon"
+                              >
+                                <path
+                                  fill-rule="evenodd"
+                                  clip-rule="evenodd"
+                                  d="M12 3.75C12.4142 3.75 12.75 4.08579 12.75 4.5V11.25H19.5C19.9142 11.25 20.25 11.5858 20.25 12C20.25 12.4142 19.9142 12.75 19.5 12.75H12.75V19.5C12.75 19.9142 12.4142 20.25 12 20.25C11.5858 20.25 11.25 19.9142 11.25 19.5V12.75H4.5C4.08579 12.75 3.75 12.4142 3.75 12C3.75 11.5858 4.08579 11.25 4.5 11.25H11.25V4.5C11.25 4.08579 11.5858 3.75 12 3.75Z"
+                                  fill="currentColor"
+                                  class="path"
+                                ></path>
+                              </svg>
+                            </button>
+                          </div>
+                        </quantity-input>
+                      </div>
+                      <button
+                        data-action="remove"
+                        class="mini-cart-modal_item-remove"
+                      >
+                        <div class="typo-legend _50">Supprimer</div>
+                      </button>
+                    </div>
+                  </cart-item>
+                </div>
+                <div class="mini-cart-modal_cart-footer">
+                  <div cart="gift-card" class="mini-cart-modal_gift-container">
+                    <h6 gift-card="code">Gift card code</h6>
+                    <h6 gift-card="amount">Gift Card amout</h6>
+                  </div>
+                  <div
+                    class="mini-cart-modal_options-container space-between padding"
+                  >
+                    <div class="total-label typo-legend">Total</div>
+                    <div cart="total" class="total-label small price-cart">
+                      300€
+                    </div>
+                  </div>
+                  <input
+                    type="submit"
+                    data-wait="Merci de patienter"
+                    ms-code-submit-old="payer"
+                    class="button-4 primary-cta cart-cta typo-legend w-button"
+                    value="Payer"
+                  />
+                  <div ms-code-submit-new="payer" class="w-embed">
+                    <button class="dash-button">
+                      <svg width="100%" height="auto">
+                        <rect
+                          width="100%"
+                          height="100%"
+                          stroke="currentColor"
+                          stroke-width="3"
+                          fill="transparent"
+                          stroke-dasharray="10,5"
+                          stroke-dashoffset="0"
+                        ></rect>
+                      </svg>
+                      <span>Payer</span>
+                    </button>
+                    <style>
+                      [ms-code-submit-old] {
+                        display: none;
+                      }
+                    </style>
+                  </div>
+                </div>
+              </form>
+              <div class="mini-cart-modal_form-success w-form-done">
+                <div class="wrapper-empty-cart">
+                  <img
+                    src="images/empty-cart.webp"
+                    loading="lazy"
+                    alt=""
+                    class="image-empty-cart"
+                  />
+                  <div class="empty-cart-label typo-legend">
+                    Ton panier est vide…<br />Un peu comme les promesses
+                    climatiques.
+                  </div>
+                </div>
+                <div class="cta-empty w-embed">
+                  <a
+                    href="#packs"
+                    id="cta-empty"
+                    class="dash-button"
+                    data-action="close-cart"
+                  >
+                    <svg width="100%" height="auto">
+                      <rect
+                        width="100%"
+                        height="100%"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        fill="transparent"
+                        stroke-dasharray="10,5"
+                        stroke-dashoffset="0"
+                      ></rect>
+                    </svg>
+                    <span>Commander</span>
+                  </a>
+                </div>
+              </div>
+              <div class="mini-cart-modal_form-error w-form-fail">
+                <div class="mini-cart-modal_form-error_label">
+                  Oops! Something went wrong while submitting the form.
+                </div>
+              </div>
+            </div>
+          </div>
+        </dialog>
+        <div class="w-embed">
+          <style>
+            smootify-cart dialog {
+              max-width: unset;
+              max-height: unset;
+              border: 0;
+              padding: 0;
+              background-color: transparent;
+            }
+            smootify-cart dialog::backdrop {
+              background: var(--smootify-backdrop-color, rgba(0, 0, 0, 0.5));
+              cursor: pointer;
+            }
+            .wf-design-mode smootify-cart dialog[open] {
+              position: fixed;
+              width: 100vw;
+              /*height: 100dvh;*/
+              margin: auto;
+              top: 0;
+              left: 0;
+              display: flex;
+              z-index: 999999;
+              justify-content: center;
+              align-items: center;
+            }
+            smootify-cart dialog:not([open]) {
+              pointer-events: none;
+              visibility: hidden;
+            }
+          </style>
+        </div>
+      </smootify-cart>
     </div>
-
-    <!-- <script type="module" src="src/main.ts"></script> -->
-    <script type="module" src="/index.ts"></script>
+    <div class="wrapper-page">
+      <div
+        data-w-id="6bcd1804-aea8-3f90-0d36-f04953086b92"
+        class="wrapper-left-colum"
+      >
+        <div class="w-dyn-list">
+          <div role="list" class="w-dyn-items">
+            <div role="listitem" class="collection-item w-dyn-item">
+              <section class="hero-section">
+                <div class="wrapper-hero">
+                  <div class="wrapper-image-hero">
+                    <img
+                      src="https://cdn.prod.website-files.com/67aa1b4ceb413205a7d11a43/67bdee0b030b4e6958bd9b5b_mainimg.webp"
+                      loading="lazy"
+                      data-w-id="d0946013-0a2d-1a13-665d-b7c9a9b8ae20"
+                      alt=""
+                      class="image-bg-hero w-dyn-bind-empty"
+                    />
+                    <div class="main-image-hero wrapper">
+                      <img
+                        src="https://cdn.prod.website-files.com/67aa1b4ceb413205a7d11a43/67b5ff63c8e6144da72de675_WhatsAppImage2024-11-04at11.webp"
+                        loading="lazy"
+                        data-w-id="7d00d159-11e6-4c98-c784-23b74065865c"
+                        alt=""
+                        class="main-image-hero w-dyn-bind-empty"
+                      />
+                      <div
+                        data-w-id="1115f28a-d99f-0322-c4cd-55bf914a1cd7"
+                        style="display: flex"
+                        class="new-clignote"
+                      >
+                        <div class="typo-big-legend primary-color new">NEW</div>
+                      </div>
+                      <img
+                        src="images/widget.svg"
+                        loading="lazy"
+                        data-w-id="df589f24-775d-9570-b8e1-dc02c08581ed"
+                        alt=""
+                        class="stickers w-dyn-bind-empty"
+                      />
+                    </div>
+                  </div>
+                  <marquee-circle
+                    textContent=" LE ZINE QUI RÉVEILLE VOTRE ÂME DE PIRATE LE ZINE QUI RÉVEILLE VOTRE ÂME DE PIRATE"
+                    img-src="https://cdn.prod.website-files.com/67aa1b4ceb413205a7d11a43/67b5ff63c8e6144da72de675_WhatsAppImage2024-11-04at11.webp"
+                  ></marquee-circle>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="w-dyn-empty">
+            <div>No items found.</div>
+          </div>
+        </div>
+      </div>
+      <div class="wrapper-right-column">
+        <div class="w-dyn-list">
+          <div role="list" class="w-dyn-items">
+            <div role="listitem" class="collection-item w-dyn-item">
+              <section class="prez-text-zine-section">
+                <div class="wrapper-prez">
+                  <div class="wrapper-first-lame-hero">
+                    <div class="wrapper-title-heroo">
+                      <h1 class="typo-legend w-dyn-bind-empty"></h1>
+                      <div class="typo-legend w-dyn-bind-empty"></div>
+                    </div>
+                    <div class="typo-legend primary-color w-embed">
+                      <a href="#packs" class="dash-button">
+                        <svg width="100%" height="auto">
+                          <rect
+                            x="1"
+                            y="1"
+                            width="calc(100% - 2px)"
+                            height="calc(100% - 2px)"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            fill="transparent"
+                            stroke-dasharray="10,5"
+                            stroke-dashoffset="0"
+                          ></rect>
+                        </svg>
+                        <span>Commander</span>
+                      </a>
+                      <style>
+                        .dash-button {
+                          position: relative;
+                          background-color: transparent;
+                          border: none;
+                          cursor: pointer;
+                          padding: 8px 18px;
+                          color: currentColor;
+                          text-transform: uppercase;
+                          display: flex;
+                          align-items: center;
+                          justify-content: center;
+                          overflow: hidden;
+                          z-index: 1;
+                        }
+                        .dash-button::before {
+                          content: "";
+                          position: absolute;
+                          inset: 1px;
+                          background-color: white;
+                          z-index: -1;
+                        }
+                        .dash-button svg {
+                          position: absolute;
+                          top: 0;
+                          left: 0;
+                          width: 100%;
+                          height: 100%;
+                          pointer-events: none;
+                        }
+                        .dash-button rect {
+                          stroke-dasharray: 10, 5;
+                          stroke-dashoffset: 0;
+                          animation: dash-move 5s linear infinite;
+                          transition: stroke-dashoffset 0.5s ease; /* Transition fluide avec easing */
+                        }
+                        .dash-button:hover rect {
+                          animation-duration: 1.5s;
+                          stroke-dashoffset: -30; /* Effet de mouvement fluide au hover */
+                          transition: stroke-dashoffset 0.5s ease-out; /* Ajout d'un easing différent pour le hover out */
+                        }
+                        @keyframes dash-move {
+                          0% {
+                            stroke-dashoffset: 0;
+                          }
+                          100% {
+                            stroke-dashoffset: -30;
+                          }
+                        }
+                      </style>
+                    </div>
+                  </div>
+                  <div class="wrapper-lame-prez">
+                    <div class="typo-little-legend _60">Intro</div>
+                    <div class="typo-corps-de-texte w-dyn-bind-empty"></div>
+                  </div>
+                  <div class="separator"></div>
+                  <div class="wrapper-lame-prez">
+                    <div class="typo-little-legend _60">dernier numéro</div>
+                    <div class="w-dyn-bind-empty w-richtext"></div>
+                  </div>
+                  <div class="separator"></div>
+                  <div class="wrapper-lame-prez">
+                    <div class="typo-little-legend _60">sommaire</div>
+                    <div
+                      data-w-id="07012606-27a2-cac3-592c-cda63a317e9a"
+                      style="height: 100%"
+                      class="wrapper-sommaire-texte"
+                    >
+                      <div
+                        data-w-id="ddb4d957-505c-3e52-15cf-11dd70e6942c"
+                        style="display: block"
+                        class="gradient-sommaire"
+                      >
+                        <div
+                          data-w-id="ae8e17e8-7a18-7753-7bc2-bb354a142fb0"
+                          style="display: block"
+                          class="typo-corps-de-texte voir-plus"
+                        >
+                          Voir plus ↓
+                        </div>
+                      </div>
+                      <div
+                        data-w-id="de303872-df95-fa49-fffa-7e5d425c6671"
+                        style="height: 200px"
+                        class="typo-corps-de-texte w-dyn-bind-empty w-richtext"
+                      ></div>
+                    </div>
+                  </div>
+                  <div class="wrapper-lame-prez">
+                    <div class="div-block-4"></div>
+                    <div
+                      id="w-node-_2b4626e9-b433-53b9-8b63-7704b69f3ec2-9682a564"
+                      class="wrapper-mag-img"
+                    >
+                      <div class="wrapper-image-mag">
+                        <img
+                          src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                          loading="lazy"
+                          alt=""
+                          class="image-double-zine w-dyn-bind-empty"
+                        />
+                        <div class="typo-little-legend w-dyn-bind-empty"></div>
+                        <div
+                          class="typo-little-legend _50 w-dyn-bind-empty"
+                        ></div>
+                      </div>
+                      <div class="wrapper-image-mag">
+                        <img
+                          src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                          loading="lazy"
+                          alt=""
+                          class="image-double-zine w-dyn-bind-empty"
+                        />
+                        <div class="typo-little-legend w-dyn-bind-empty"></div>
+                        <div
+                          class="typo-little-legend _50 w-dyn-bind-empty"
+                        ></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="description-zine-section">
+                <div class="wrapper-description-zine">
+                  <div class="wrapper-texte-description-zine">
+                    <h2 class="typo-big-heading w-dyn-bind-empty"></h2>
+                    <div
+                      class="typo-corps-de-texte indent-paragraphe _128left w-dyn-bind-empty w-richtext"
+                    ></div>
+                  </div>
+                  <div class="wrapper-image-description-zine">
+                    <img
+                      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                      loading="lazy"
+                      alt=""
+                      class="image _128left w-dyn-bind-empty"
+                    />
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+          <div class="w-dyn-empty">
+            <div>No items found.</div>
+          </div>
+        </div>
+        <section id="packs" class="packs-section">
+          <div class="wrapper-top-slider">
+            <div class="wrapper-text-packs">
+              <h2 class="typo-big-heading">Les <br />packs</h2>
+            </div>
+            <div class="wrapper-arrow-slider">
+              <a
+                aria-label="previous slide"
+                href="#"
+                class="arrows-slide swiper-btn-prev w-inline-block"
+                ><img
+                  src="images/arrow-slider.svg"
+                  loading="lazy"
+                  alt=""
+                  class="left-arrow-slider"
+              /></a>
+              <a
+                aria-label="next slide"
+                href="#"
+                class="arrows-slide swiper-btn-next w-inline-block"
+                ><img
+                  src="images/arrow-slider.svg"
+                  loading="lazy"
+                  alt=""
+                  class="right-arrow-slider"
+              /></a>
+            </div>
+          </div>
+          <div class="wrapper-slide-packs">
+            <div class="swiper is-team w-dyn-list">
+              <div role="list" class="swiper-wrapper is-team w-dyn-items">
+                <div role="listitem" class="swiper-slide is-team w-dyn-item">
+                  <smootify-product
+                    data-id=""
+                    class="smootify-product color-cms"
+                  >
+                    <div class="wrapper-top-card-pack-slider">
+                      <div class="team-imag_wrapper">
+                        <img
+                          src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                          loading="lazy"
+                          alt=""
+                          class="team-image w-dyn-bind-empty"
+                        />
+                      </div>
+                      <div class="product-wrapper"></div>
+                      <div class="team-info_wrapper">
+                        <div class="typo-big-legend w-dyn-bind-empty"></div>
+                        <div class="wrapper-pricing-pack">
+                          <div class="price-wrapper">
+                            <div
+                              class="typo-corps-de-texte-gras w-dyn-bind-empty"
+                            ></div>
+                            <div class="typo-corps-de-texte-gras">€</div>
+                          </div>
+                          <div class="wrapper-reduc-price">
+                            <div
+                              class="typo-corps-de-texte-gras _60 w-dyn-bind-empty"
+                            ></div>
+                            <div class="typo-corps-de-texte-gras _60">€</div>
+                          </div>
+                        </div>
+                        <div class="wrapper-description-pack">
+                          <div
+                            class="typo-petit-corps-de-texte description-product-card w-dyn-bind-empty w-richtext"
+                          ></div>
+                          <div class="rich-texte-style w-embed">
+                            <style>
+                              .description-product-card p {
+                                display: inline;
+                              }
+                              .description-product-card ul {
+                                margin: 4px;
+                              }
+                              .description-product-card li {
+                                margin: 4px;
+                                padding: 0;
+                              }
+                            </style>
+                          </div>
+                          <div
+                            data-w-id="c91047b1-61f9-6b6d-2beb-ac30972608cc"
+                            class="typo-corps-de-texte voir-plus"
+                          >
+                            Voir plus ↓
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <smootify-add-to-cart class="smootify-add-to-cart">
+                      <div class="add-to-cart_form-wrapper w-form">
+                        <form
+                          id="email-form"
+                          name="email-form"
+                          data-name="Email Form"
+                          method="get"
+                          class="add-to-cart_form"
+                          data-wf-page-id="67ab2897c8b464fb9682a564"
+                          data-wf-element-id="7b1b15aa-0535-23d2-cff3-614c08a16222"
+                        >
+                          <variant-selector
+                            data-option="1"
+                            class="variant-selector"
+                            ><label
+                              for="field-3"
+                              class="variant-label typo-little-legend transparent-bg color-cms"
+                              >Choix de l&#x27;option</label
+                            ><select
+                              id="field-3"
+                              name="field-3"
+                              data-name="Field 3"
+                              class="add-to-cart_select-field primary-cta typo-little-legend selector color-cms w-select"
+                            >
+                              <option value="First">choix de l’option</option>
+                              <option value="First">First choice</option>
+                              <option value="Second">Second choice</option>
+                              <option value="Third">Third choice</option>
+                            </select></variant-selector
+                          ><variant-selector
+                            data-option="3"
+                            class="variant-selector-2"
+                            ><label for="field-2" class="typo-legend"
+                              >Variant Selector</label
+                            ><select
+                              id="field-2"
+                              name="field-2"
+                              data-name="Field 2"
+                              class="add-to-cart_select-field w-select"
+                            >
+                              <option value="">Select one...</option>
+                              <option value="First">First choice</option>
+                              <option value="Second">Second choice</option>
+                              <option value="Third">Third choice</option>
+                            </select></variant-selector
+                          >
+                          <div
+                            condition="out-of-stock"
+                            class="shop-cta color-cms w-embed"
+                          >
+                            <button class="dash-button">
+                              <svg width="100%" height="auto">
+                                <rect
+                                  width="100%"
+                                  height="100%"
+                                  stroke="currentColor"
+                                  stroke-width="3"
+                                  fill="transparent"
+                                  stroke-dasharray="10,5"
+                                  stroke-dashoffset="0"
+                                ></rect>
+                              </svg>
+                              <span>Épuisé</span>
+                            </button>
+                          </div>
+                          <div condition="in-stock" class="add-to-cart_wrapper">
+                            <quantity-input
+                              class="quantity-input-2"
+                            ></quantity-input
+                            ><button
+                              ms-code-submit-old=""
+                              type="submit"
+                              class="button-2 is-icon primary-cta hide"
+                            >
+                              <div
+                                data-state="default"
+                                class="button_default-state"
+                              >
+                                <span
+                                  class="text-weight-medium typo-little-legend"
+                                  >Ajouter au panier</span
+                                >
+                              </div>
+                              <div
+                                data-state="loading"
+                                class="button_loading-state is-hidden"
+                              >
+                                <svg
+                                  version="1.1"
+                                  x="0px"
+                                  y="0px"
+                                  viewbox="0 0 100 100"
+                                  enable-background="new 0 0 0 0"
+                                  class="button_loading-spinner"
+                                >
+                                  <path
+                                    fill="currentColor"
+                                    d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"
+                                  ></path>
+                                  <animatetransform
+                                    attributename="transform"
+                                    attributetype="XML"
+                                    type="rotate"
+                                    dur="1s"
+                                    from="0 50 50"
+                                    to="360 50 50"
+                                    repeatcount="indefinite"
+                                  ></animatetransform></svg
+                                ><span class="span-6">Merci de patienter</span>
+                              </div>
+                              <img
+                                src="images/add-cart.svg"
+                                loading="lazy"
+                                alt=""
+                              />
+                            </button>
+                            <div
+                              condition="in-stock"
+                              ms-code-submit-new=""
+                              class="shop-cta color-cms w-embed"
+                            >
+                              <button class="dash-button">
+                                <svg width="100%" height="auto">
+                                  <rect
+                                    width="100%"
+                                    height="100%"
+                                    stroke="currentColor"
+                                    stroke-width="3"
+                                    fill="transparent"
+                                    stroke-dasharray="10,5"
+                                    stroke-dashoffset="0"
+                                  ></rect>
+                                </svg>
+                                <span>Ajouter au Panier</span>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                        <div class="add-to-cart_success w-form-done">
+                          <div>
+                            Thank you! Your submission has been received!
+                          </div>
+                        </div>
+                        <div class="add-to-card_error w-form-fail">
+                          <div class="add-to-cart_error-label">
+                            Oops! Something went wrong while submitting the
+                            form.
+                          </div>
+                        </div>
+                      </div>
+                    </smootify-add-to-cart>
+                    <div class="limited typo-legend upercase inverse-color-cms">
+                      <div
+                        class="text-block inverse-color-cms w-dyn-bind-empty"
+                      ></div>
+                    </div>
+                    <div
+                      condition="out-of-stock"
+                      class="out-of-stock-div"
+                    ></div>
+                  </smootify-product>
+                </div>
+              </div>
+              <div class="w-dyn-empty">
+                <div>No items found.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="push-pack-section">
+          <div class="wrapper-push-pack">
+            <div class="wrapper-text-push-pack">
+              <h2 class="typo-big-heading">
+                Plus t’en prends, moins t’as d’excuses
+              </h2>
+              <div class="_267left">
+                <div class="typo-corps-de-texte indent-paragraphe">
+                  Un seul zine ? C’est mignon. Mais si tu veux vraiment capter
+                  l’époque qui s’effondre sous tes pieds, autant y aller à fond.
+                  Les packs, c’est l’anti-amnésie. Des enquêtes qui grattent là
+                  où ça fait mal, des récits qui cognent, des visuels qui
+                  restent collés à la rétine. À empiler, à prêter, à laisser
+                  traîner pour provoquer des discussions (et quelques malaises).
+                </div>
+                <div class="cta-secondary w-embed">
+                  <a href="#packs" class="dash-button" data-action="close-cart">
+                    <svg width="100%" height="auto">
+                      <rect
+                        width="100%"
+                        height="100%"
+                        stroke="currentColor"
+                        stroke-width="3"
+                        fill="transparent"
+                        stroke-dasharray="10,5"
+                        stroke-dashoffset="0"
+                      ></rect>
+                    </svg>
+                    <span>Prend ton pack !</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="packs-section">
+          <div class="wrapper-top-slider">
+            <div class="wrapper-text-packs">
+              <h2 class="typo-big-heading">les anciens numéros</h2>
+            </div>
+            <div class="wrapper-arrow-slider">
+              <a
+                aria-label="previous slide"
+                href="#"
+                class="arrows-slide swiper-btn-prev-zine w-inline-block"
+                ><img
+                  src="images/arrow-slider.svg"
+                  loading="lazy"
+                  alt=""
+                  class="left-arrow-slider"
+              /></a>
+              <a
+                aria-label="next slide"
+                href="#"
+                class="arrows-slide swiper-btn-next-zine w-inline-block"
+                ><img
+                  src="images/arrow-slider.svg"
+                  loading="lazy"
+                  alt=""
+                  class="right-arrow-slider"
+              /></a>
+            </div>
+          </div>
+          <div class="wrapper-slide-packs">
+            <div class="swiper is-zine w-dyn-list">
+              <div role="list" class="swiper-wrapper is-zine w-dyn-items">
+                <div role="listitem" class="swiper-slide is-zine w-dyn-item">
+                  <div class="team-imag_wrapper-ancien">
+                    <img
+                      src="https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg"
+                      loading="lazy"
+                      alt=""
+                      class="team-image w-dyn-bind-empty"
+                    />
+                  </div>
+                  <div class="wrapper-text-num-card">
+                    <div class="typo-big-legend w-dyn-bind-empty"></div>
+                    <div class="typo-big-legend">-</div>
+                    <div class="typo-big-legend break w-dyn-bind-empty"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-dyn-empty">
+                <div>No items found.</div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="citation-section">
+          <div class="wrapper-citation">
+            <div class="lame-citation">
+              <div class="typo-corps-de-texte italic">
+                « Climax, c&#x27;est le magazine pop sur le climat et
+                l&#x27;écologie, qui bouscule les consciences sans céder au
+                désespoir, avec de l&#x27;humour, de l&#x27;ironie et une grande
+                dose de créativité. »<br />
+              </div>
+              <div class="typo-corps-de-texte _50-black">— Quotidien<br /></div>
+              <div class="image-citation _50 w-embed">
+                <svg
+                  width="100%"
+                  height="auto"
+                  viewbox="0 0 399 438"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g clip-path="url(#clip0_437_954)">
+                    <path
+                      d="M148.733 3.46666C85.5334 16.6667 33.6667 63.2 13.1333 124.933C1.93334 159.067 1.66668 200.933 12.6 235.2C43.2667 331.467 145.533 384.4 241.533 353.733C248.6 351.467 257.8 348 261.933 345.867L269.533 342L277.8 351.733C282.333 356.933 286.733 361.733 287.533 362.267C289.667 363.733 395 363.6 395 362.133C395 361.2 372.067 334.267 339.4 297.067L332.2 288.8L337.4 281.067C350.067 262.4 361 234.8 364.867 211.467C367.533 195.6 367.533 167.733 365 151.6C354.467 87.0667 308.333 32 246.6 10.1333C225.8 2.79999 211.533 0.666656 184.733 0.799989C166.733 0.799989 158.067 1.46666 148.733 3.46666ZM210.333 83.4667C257.133 94.6667 289.4 138.267 286.6 186.667C285.933 198.933 281.4 217.6 277.8 223.067C277 224.4 268.467 215.467 246.333 190.133C229.667 170.933 215.533 155.333 215 155.333C213.8 155.333 157.133 205.467 156.6 207.067C156.467 207.6 169.4 223.733 185.533 242.667C201.667 261.733 214.6 277.467 214.333 277.733C212.6 279.6 196.6 282 186.333 282C158.333 282 134.733 272.267 115 252.667C97.8 235.733 88.3333 216.133 85.4 191.333C80.0667 145.6 109.4 100.267 154.067 85.3333C172.6 79.2 190.067 78.5333 210.333 83.4667Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M20.6002 372C12.8668 375.333 8.3335 379.333 4.3335 386.4C1.00016 392.267 0.333496 394.8 0.333496 402.533C0.333496 418.4 8.86683 430.4 23.1335 434.533C31.8002 437.2 34.2002 437.2 42.4668 434.667C48.2002 432.933 49.1335 432.933 51.1335 434.8C52.7335 436.267 55.6668 436.667 62.2002 436.4L71.0002 436L65.5335 429.6L60.0668 423.333L63.1335 417.067C71.4002 400.133 63.1335 379.467 45.2668 372C39.2668 369.467 26.4668 369.467 20.6002 372ZM44.3335 387.333C49.2668 390.8 52.3335 397.2 52.3335 403.6C52.3335 411.867 50.6002 412.133 43.9335 405.067L37.8002 398.667L33.0002 403.467L28.2002 408.133L33.6668 414.267C36.6002 417.6 39.0002 420.8 39.0002 421.2C39.0002 421.6 36.4668 422 33.4002 422C21.8002 422 13.1335 412.8 14.0668 401.6C14.7335 394.133 17.8002 389.333 24.3335 385.733C30.2002 382.533 38.4668 383.2 44.3335 387.333Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M178.334 373.2C178.067 374.667 177.534 377.2 177.4 378.667C177.134 380.667 175.8 381.467 171.934 381.733C166.867 382.133 166.467 382.8 165.4 390.667C165.134 392.8 165.934 393.467 169.8 393.733L174.6 394.133L170.734 413.733C168.734 424.533 167 434.133 167 434.933C167 436.133 169.934 436.667 177 436.667C182.467 436.667 187 436.267 187 435.6C187 435.067 187.667 432.4 188.2 429.467C189.267 424.933 189.134 424.267 186.734 423.6C183.8 422.933 183.8 421.6 187.134 402.267C188.6 394 188.6 394 193.134 394C195.934 394 197.667 394.667 197.667 395.6C197.667 396.533 196.2 405.733 194.334 415.867C192.467 426.133 191 435.067 191 435.733C191 436.267 194.067 436.667 197.934 436.4L204.867 436L208.467 416C210.467 404.933 212.2 395.6 212.2 394.933C212.334 394.4 209.4 394 205.667 394C199.667 394 199 393.733 199 390.933C199 383.2 200.2 382 207.667 382H214.6L215.4 377.067C215.934 374.4 215.934 371.867 215.667 371.333C215.267 370.8 212.2 370.4 208.734 370.533C202.467 370.8 202.334 370.8 201.267 376.4C200.2 381.733 199.934 382 195.534 382H190.867L191.667 376.133L192.6 370.4H185.8C179.934 370.4 178.867 370.8 178.334 373.2Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M259.8 371.2C259.534 371.6 258.867 375.2 258.334 378.934C257.8 382.8 257 386 256.467 386C255.8 386 253.534 385.067 251.134 383.867C244.467 380.534 231.4 381.734 224.334 386.534C213.134 393.867 208.867 412.267 215.4 424.8C217.667 429.334 220.067 431.467 225.667 434.267C233.8 438.534 237.134 438.8 243.934 436C247.4 434.534 249.134 434.4 249.667 435.334C250.2 436.134 253.267 436.667 256.467 436.4L262.334 436L267.934 404.667C271 387.467 273.267 372.667 273 371.867C272.6 370.4 260.6 369.734 259.8 371.2ZM247 396C252.067 398.667 254.334 405.334 252.467 412.4C249.934 421.467 241.4 426.534 233.8 423.334C223.4 419.067 224.2 401.334 235.134 395.734C239.4 393.467 242.334 393.6 247 396Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M277.267 372.4C272.334 377.733 276.067 386 283.4 386C287.8 386 291 382.8 291 378.133C291 370.933 281.934 367.2 277.267 372.4Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M133.934 382C121.267 385.067 111.4 398.533 112.6 411.333C113.534 421.333 119.4 429.733 128.334 434.267C132.334 436.267 137.8 438 140.467 438C147.667 438 159 431.6 163.667 424.933C167.267 419.733 167.667 418 167.667 409.333C167.667 400.667 167.267 398.933 163.667 393.733C157 384.4 144.467 379.333 133.934 382ZM146.2 395.867C152.2 398.4 155 402.8 155 409.467C155 416.4 151.267 421.467 144.467 423.467C127.667 428.533 118.2 404 133.934 396.267C139.4 393.6 140.6 393.467 146.2 395.867Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M72.6002 388.267C71.8002 391.867 70.2002 400.933 69.0002 408.667C66.8669 421.333 66.8669 423.2 68.7336 427.6C69.8002 430.267 72.3336 433.467 74.2002 434.667C78.3336 437.333 86.2002 437.6 89.2669 435.2C91.0002 433.733 91.5336 433.733 91.9336 434.933C92.3336 436 95.0002 436.667 98.8669 436.667H105.134L109.534 410.933C111.934 396.933 114.067 384.667 114.2 384C114.2 383.2 111.267 382.533 107.4 382.267C100.467 381.867 100.467 381.867 99.6669 386.267C93.9336 419.2 93.6669 420 90.8669 422.267C87.4002 425.2 86.8669 425.2 83.6669 422.8C81.1336 420.933 81.1336 420.667 84.0669 403.2C85.6669 393.333 87.0002 384.533 87.0002 383.6C87.0002 382.533 84.7336 382 80.4669 382H73.9336L72.6002 388.267Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M302.333 384.133C292.2 389.333 286.733 398.933 286.733 411.333C286.733 425.2 293.4 433.733 306.467 436.8C312.2 438.133 314.333 438 320.067 436.133C326.733 433.867 335 427.733 335 424.933C335 424.133 333.133 422 330.867 420.133L326.733 416.533L323.4 419.867C317 426.4 305 425.6 301.8 418.533C301 416.667 300.333 414.933 300.333 414.667C300.333 414.267 308.733 414 319 414H337.533L338.467 409.467C340.2 399.6 335.267 388.933 326.867 384.667C320.6 381.333 308.067 381.067 302.333 384.133ZM321.667 396.667C327 402 325.267 403.333 313.667 403.333C302.067 403.333 300.867 402.4 305.933 397.067C309.667 393.067 317.8 392.8 321.667 396.667Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M345.133 385.6C344.333 389.2 336.333 435.6 336.333 436.4C336.333 436.666 339.533 436.666 343.267 436.4L350.333 436L353.8 416.8C357.267 397.733 358.867 394 363.8 394C366.2 394 369.667 397.866 369.667 400.4C369.533 401.6 368.2 410 366.467 419.066C364.867 428 363.8 435.6 364.067 436C365.133 436.933 377.667 436.8 377.667 435.866C377.667 435.466 379.267 426.533 381.133 416.266C385 395.2 384.467 389.733 378.067 384.8C374.2 381.6 364.6 380.933 361.8 383.6C360.333 384.933 359.933 384.933 359.4 383.6C359 382.666 356.333 382 352.333 382C346.333 382 345.8 382.266 345.133 385.6Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M272.334 394.667C272.334 394.933 270.867 403.867 269 414.267C267.134 424.667 265.667 434 265.667 434.933C265.667 436.133 267.8 436.667 272.334 436.667C279.934 436.667 278.867 438.8 283.134 414.667C284.6 405.867 286.067 397.6 286.467 396.267C287.134 394.267 286.2 394 279.8 394C275.667 394 272.334 394.267 272.334 394.667Z"
+                      fill="black"
+                    ></path>
+                    <path
+                      d="M385.8 424.267C381.4 429.6 384.867 436.667 391.667 436.667C398.467 436.667 401.533 426.667 396.067 422.8C391.8 419.733 388.867 420.133 385.8 424.267Z"
+                      fill="black"
+                    ></path>
+                  </g>
+                  <defs>
+                    <clippath id="clip0_437_954">
+                      <rect width="399" height="438" fill="curentColor"></rect>
+                    </clippath>
+                  </defs>
+                </svg>
+              </div>
+            </div>
+            <div class="lame-citation">
+              <div class="typo-corps-de-texte italic">
+                « Pas de vert, comme c’est pourtant souvent le cas dans les
+                médias écolos : Climax veut marquer sa différence. (...) On
+                trouve en effet l’ébauche d’une contre-culture écolo abordée par
+                des angles originaux et un certain soin apporté au visuel. »
+              </div>
+              <div class="typo-corps-de-texte _50-black">— Libération</div>
+              <img
+                src="images/Libération.svg"
+                loading="lazy"
+                alt=""
+                class="image-citation lib-ration"
+              />
+            </div>
+          </div>
+        </section>
+        <section class="newsletter-section">
+          <div class="w-dyn-list">
+            <div role="list" class="w-dyn-items">
+              <div role="listitem" class="w-dyn-item">
+                <div class="wrapper-newsletter">
+                  <div class="wrapper-text-newsletter">
+                    <h2 class="typo-big-heading primary-color newsletter-title">
+                      La newsletter qui rend fraîche ta boîte mail
+                    </h2>
+                  </div>
+                  <div class="typo-corps-de-texte indent-paragraphe">
+                    Reçois gratuitement l&#x27;actualité mordante de la
+                    révolution climatique tous les mardis dans ta boîte mail.
+                  </div>
+                  <div class="w-form">
+                    <form
+                      id="email-form-3"
+                      name="email-form-3"
+                      data-name="Email Form 3"
+                      method="get"
+                      class="form"
+                      data-wf-page-id="67ab2897c8b464fb9682a564"
+                      data-wf-element-id="bdced687-5c19-30c1-2537-c3460a53c5ba"
+                    >
+                      <input
+                        class="typo-corps-de-texte field w-input"
+                        maxlength="256"
+                        name="email"
+                        data-name="Email"
+                        placeholder="jeff@mail.com"
+                        type="email"
+                        id="email"
+                        required=""
+                      /><input
+                        type="submit"
+                        data-wait="Veuillez patienter"
+                        ms-code-submit-old="newsletter"
+                        class="primary-cta hug typo-legend primary-color w-button"
+                        value="S&#x27;abonner"
+                      />
+                      <div
+                        ms-code-submit-new="newsletter"
+                        class="newslette-cta w-embed"
+                      >
+                        <button class="dash-button">
+                          <svg width="100%" height="auto">
+                            <rect
+                              width="100%"
+                              height="100%"
+                              stroke="currentColor"
+                              stroke-width="3"
+                              fill="transparent"
+                              stroke-dasharray="10,5"
+                              stroke-dashoffset="0"
+                            ></rect>
+                          </svg>
+                          <span>S’abonner</span>
+                        </button>
+                      </div>
+                    </form>
+                    <div class="w-form-done">
+                      <div>Thank you! Your submission has been received!</div>
+                    </div>
+                    <div class="w-form-fail">
+                      <div>
+                        Oops! Something went wrong while submitting the form.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="w-dyn-empty">
+              <div>No items found.</div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+    <section class="footer-section">
+      <div class="w-dyn-list">
+        <div role="list" class="w-dyn-items">
+          <div role="listitem" class="w-dyn-item">
+            <div class="wrapper-footer">
+              <div class="wrapper-toppom-footer">
+                <div class="top-wrapper-footer">
+                  <div
+                    id="w-node-_7b34b233-f711-cd98-4abd-0b1260659dd4-60659dd0"
+                    class="typo-footer"
+                  >
+                    le zine plus chaud que le climat
+                  </div>
+                  <div class="wrapper-link-footer">
+                    <a
+                      href="https://www.crrl.xyz/"
+                      target="_blank"
+                      class="typo-little-legend"
+                      >Le studio</a
+                    >
+                    <a href="mentions-legales.html" class="typo-little-legend"
+                      >Mentions légales</a
+                    >
+                    <a
+                      href="politique-de-confidentialite.html"
+                      class="typo-little-legend"
+                      >Cookies et confidentialité</a
+                    >
+                    <a
+                      href="conditions-dutilisation.html"
+                      class="typo-little-legend"
+                      >CGU</a
+                    >
+                    <a
+                      href="mailto:hello@climaxnewsletter.fr"
+                      class="typo-little-legend"
+                      >Contact</a
+                    >
+                    <a
+                      href="https://donorbox.org/climax"
+                      target="_blank"
+                      class="typo-little-legend"
+                      >Faire un don</a
+                    >
+                  </div>
+                </div>
+                <div class="wrapper-middle-footer">
+                  <div class="typo-corps-de-texte">
+                    Ce site a été conçu de manière raisonée, par le
+                    <a
+                      href="https://studio9p.com/"
+                      target="_blank"
+                      class="link-corp"
+                      >Studio9p.</a
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="wrapper-logo-footer">
+                <div class="logo-footer w-embed">
+                  <svg
+                    preserveaspectratio="xMidYMid meet"
+                    data-bbox="-42.657 380.936 680.314 79.129"
+                    viewbox="-42.657 380.936 680.314 79.129"
+                    height="100%"
+                    width="100%"
+                    xmlns="http://www.w3.org/2000/svg"
+                    data-type="color"
+                    role="presentation"
+                    aria-hidden="true"
+                  >
+                    <g>
+                      <path
+                        d="M83.013 419.125c-1.153 18.617-20.328 27.97-60.151 27.97-40.595 0-65.519-6.908-65.519-32.593s24.924-33.566 65.519-33.566c39.902 0 59.13 10.37 60.216 29.05H55.779c-2.674-6.212-10.069-10.565-32.917-10.565-26.923 0-38.071 4.183-38.071 15.08 0 10.021 11.148 14.108 38.071 14.108 22.803 0 30.155-4.273 32.862-9.485h27.289v.001z"
+                        fill="currentColor"
+                        data-color="1"
+                      ></path>
+                      <path
+                        fill="currentColor"
+                        d="M184.375 426.702v18.485h-77.193v-.039h-10.39V382.88h26.292v43.822h61.291z"
+                        data-color="1"
+                      ></path>
+                      <path
+                        fill="currentColor"
+                        d="M223.832 382.88v62.267H197.54V382.88h26.292z"
+                        data-color="1"
+                      ></path>
+                      <path
+                        fill="currentColor"
+                        d="m365.28 382.88-49.508 47.28-49.349-47.28h-26.291v62.267h26.291v-31.823l49.429 46.741 49.428-46.858v31.94h26.292V382.88H365.28z"
+                        data-color="1"
+                      ></path>
+                      <path
+                        d="m474.094 421.092-14.293-20.397-14.177 20.397h28.47zm10.227 14.594h-48.842l-6.576 9.462h-28.921l45.117-62.268h29.236l45.538 62.268h-28.921l-6.631-9.462z"
+                        fill="currentColor"
+                        data-color="1"
+                      ></path>
+                      <path
+                        fill="currentColor"
+                        d="m602.952 382.88-22.085 17.981-22.085-17.981h-33.653l39.461 30.882-40.513 31.385h33.654l23.078-18.539 23.195 18.539h33.653l-40.589-31.42 39.538-30.847h-33.654z"
+                        data-color="1"
+                      ></path>
+                    </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="w-dyn-empty">
+          <div>No items found.</div>
+        </div>
+      </div>
+    </section>
+    <script
+      src="https://d3e54v103j8qbb.cloudfront.net/js/jquery-3.5.1.min.dc5e7f18c8.js?site=67aa1b4ceb413205a7d119d7"
+      type="text/javascript"
+      integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0="
+      crossorigin="anonymous"
+    ></script>
+    <script src="/index.ts" type="module"></script>
+    <script src="js/webflow.js" type="text/javascript"></script>
+    <!--  Swiper CDN (à ajouter dans le head ou avant le script)  -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://climax-script.netlify.app/assets/index-DqgS29lt.js"></script>
+    <script>
+      const teamSlider = new Swiper(".is-team", {
+        slidesPerView: 1.2,
+        spaceBetween: 24,
+        grabCursor: true, // Active l'effet "grab" sur le slider
+        navigation: {
+          nextEl: ".swiper-btn-next",
+          prevEl: ".swiper-btn-prev",
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 1.5,
+          },
+        },
+      });
+    </script>
+    <script>
+      const zineSlider = new Swiper(".is-zine", {
+        slidesPerView: 1.5,
+        spaceBetween: 16,
+        grabCursor: true, // Active l'effet "grab" sur le slider
+        navigation: {
+          nextEl: ".swiper-btn-next-zine",
+          prevEl: ".swiper-btn-prev-zine",
+        },
+        breakpoints: {
+          480: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 2.75,
+          },
+        },
+      });
+    </script>
   </body>
 </html>

@@ -6,13 +6,15 @@ import fnt from "./fonts/Syne-ExtraBold-msdf.json";
 import atlasURL from "./fonts/Syne-ExtraBold.png";
 import img from "/yo.jpg";
 
+console.log("___atlas", atlasURL);
+
 export class MarqueeCircle extends HTMLElement {
   src = "";
   textContent = "";
 
   private config = {
     textScaleMultiplier: window.innerWidth < 440 ? 0.035 : 0.025,
-    imgScaleMultiplier: 0.003,
+    imgScaleMultiplier: window.innerWidth < 440 ? 0.0025 : 0.0015,
   };
 
   private scene: THREE.Scene | null = null;
@@ -69,7 +71,18 @@ export class MarqueeCircle extends HTMLElement {
       const textureLoader = new THREE.TextureLoader();
       textureLoader.load(src, (texture) => {
         texture.colorSpace = THREE.SRGBColorSpace;
-        const planeGeometry = new THREE.PlaneGeometry(2, 2);
+
+        // Récupérer les dimensions de l'image
+        const imageWidth = texture.image.width;
+        const imageHeight = texture.image.height;
+
+        // Adapter la taille du plane en fonction de l'image
+        const aspectRatio = imageWidth / imageHeight;
+        const planeWidth = 2;
+        const planeHeight = planeWidth / aspectRatio;
+
+        const planeGeometry = new THREE.PlaneGeometry(planeWidth, planeHeight);
+
         const planeMaterial = new THREE.MeshBasicMaterial({ map: texture });
         const plane = new THREE.Mesh(planeGeometry, planeMaterial);
         const scale = this.sizes.width * this.config.imgScaleMultiplier;
@@ -124,6 +137,7 @@ export class MarqueeCircle extends HTMLElement {
     const radius = textWidth / (2 * Math.PI);
     textMaterial.uniforms.uRadius.value = radius;
 
+    textMesh.rotation.y = -0.55;
     textMesh.rotation.x = 0.15;
     textMesh.rotation.z = 0.15;
 
@@ -153,8 +167,14 @@ export class MarqueeCircle extends HTMLElement {
   private updateTextScale() {
     if (!this.textMesh || !this.plane) return;
 
-    const planeScale = this.sizes.width * this.config.imgScaleMultiplier;
+    const planeScale = Math.max(
+      this.sizes.width * this.config.imgScaleMultiplier,
+      1
+    );
     const { scale } = this.calculateScale(this.textMesh);
+
+    console.log("planeScale", planeScale);
+    console.log("muliplier", this.config.imgScaleMultiplier);
 
     this.textMesh.scale.set(scale, -scale, scale);
     this.plane.scale.set(planeScale, planeScale, planeScale);
@@ -184,6 +204,7 @@ export class MarqueeCircle extends HTMLElement {
       this.sizes.height = this.clientHeight;
 
       this.config.textScaleMultiplier = this.sizes.width < 440 ? 0.035 : 0.025;
+      this.config.imgScaleMultiplier = this.sizes.width < 440 ? 0.0025 : 0.0015;
 
       if (this.camera) {
         this.camera.aspect = this.sizes.width / this.sizes.height;
