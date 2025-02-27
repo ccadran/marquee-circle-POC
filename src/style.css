@@ -13,6 +13,7 @@ marquee-circle {
   display: block;
   position: absolute;
   top: 0;
+  will-change: transform;
 }
 .container {
   width: 50vw;
