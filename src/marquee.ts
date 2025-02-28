@@ -225,7 +225,6 @@ export class MarqueeCircle extends HTMLElement {
     this.initScene();
 
     this.plane = await this.loadTexture(this.src);
-
     const atlas = await this.loadFontAtlas(atlasURL);
 
     const { textMesh, textMaterial } = this.createTextMesh(
