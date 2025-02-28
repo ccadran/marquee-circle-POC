@@ -17,5 +17,5 @@ varying vec2 vUv;
           #endif
           if (alpha < uAlphaTest) discard;
 
-          gl_FragColor = vec4(0.585, 0.148, 0.672, 1.0);
+          gl_FragColor = vec4(0.585, 0.148, 0.673, 1.0);
         }
