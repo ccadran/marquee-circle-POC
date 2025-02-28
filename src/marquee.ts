@@ -3,10 +3,9 @@ import { MSDFTextGeometry, uniforms } from "three-msdf-text-utils";
 import vertexShader from "./shaders/vertex.glsl";
 import fragmentShader from "./shaders/fragment.glsl";
 import fnt from "./fonts/Syne-ExtraBold-msdf.json";
-import atlasURL from "./fonts/Syne-ExtraBold.png";
-import img from "/yo.jpg";
 
-console.log("___atlas", atlasURL);
+const atlasURL =
+  "https://cdn.prod.website-files.com/67aa1b4ceb413205a7d119d7/67c07915e37a7fa6ce755c96_Syne-ExtraBold.png";
 
 export class MarqueeCircle extends HTMLElement {
   src = "";
@@ -26,7 +25,7 @@ export class MarqueeCircle extends HTMLElement {
   private sizes = { width: 0, height: 0 };
 
   connectedCallback() {
-    this.src = this.getAttribute("img-src") || img;
+    this.src = this.getAttribute("img-src") || "";
     this.textContent =
       this.getAttribute("textContent")?.toUpperCase() || "DEFAULT TEXT";
 
@@ -227,9 +226,7 @@ export class MarqueeCircle extends HTMLElement {
 
     this.plane = await this.loadTexture(this.src);
 
-    const atlas = await this.loadFontAtlas(
-      "https://cdn.prod.website-files.com/67aa1b4ceb413205a7d119d7/67c07915e37a7fa6ce755c96_Syne-ExtraBold.png"
-    );
+    const atlas = await this.loadFontAtlas(atlasURL);
 
     const { textMesh, textMaterial } = this.createTextMesh(
       fnt,
